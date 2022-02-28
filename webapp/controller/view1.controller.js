@@ -1,6 +1,7 @@
 sap.ui.define(
-    ["sap/ui/core/mvc/Controller"],
-    function (oController) {
+    ["sap/ui/core/mvc/Controller",
+        "qrcode/utils/jsbarcode"],
+    function (oController, barcode) {
         return oController.extend("qrcode.controller.view1", {
             onInit: function () {
                 var data = {
@@ -19,7 +20,8 @@ sap.ui.define(
                     }, {
                         "compName": "Test Company4",
                         "compCode": "CMP4"
-                    }, {
+                    },
+                    {
                         "compName": "Test Company5",
                         "compCode": "CMP5"
                     }]
@@ -55,6 +57,15 @@ sap.ui.define(
             },
             clearQRCode: function () {
                 this.byId("idImg").setSrc("");
+            },
+            onGenerateBarcode: function () {
+                //Using Barcode CDN
+                var oSFContent = this.byId("idSF").getContent();
+                JsBarcode(".barcode", oSFContent[1].getValue(), {
+                    height: 40,
+                    width:1.5,
+                    lineColor:"red"
+                });
             }
         });
     }

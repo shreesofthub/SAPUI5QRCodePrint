@@ -27,13 +27,16 @@
                 </Select>
                 <Label id="idLbl5" />
                 <Button id="idBtn1" text="Generate QR Code" type="Accept" icon="sap-icon://generate-shortcut" press="generateQRCode"></Button>
-                <Button id="idBtn2" text="Clear QR Code" type="Reject" icon="sap-icon://clear" press="clearQRCode"></Button>
+                <Button id="idBtn3" text="Generate Bar Code" type="Accept" icon="" press="onGenerateBarcode"/>
+                <Button id="idBtn2" text="Clear" type="Reject" icon="sap-icon://clear" press="clearQRCode"></Button>
             </form:SimpleForm>
             <HBox id="idHbox">
                 <Image id="idImg" />
+                <Image id="idBarcode" class="barcode"/>
             </HBox>
             <headerContent>
-                <Link id="idLink" href="https://fioricvv.blogspot.com/2018/" text="Refrence Link"></Link>
+                <Link id="idLink" href="https://fioricvv.blogspot.com/2018/" text="QR Code-Refrence"></Link>
+                <Link id="idLink1" href="https://www.nathanhand.co.uk/blog/post/how-to-include-a-third-party-barcode-generator-in-ui5" text="Bar Code-Refrence"></Link>
             </headerContent>
           </Page>
 </mvc:View>          
